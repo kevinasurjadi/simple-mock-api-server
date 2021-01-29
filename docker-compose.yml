@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: app
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - "4000:4000"
+    working_dir: /app
+    command: "deno run --allow-env --allow-net --allow-read --allow-write app.js"
+    volumes:
+      - ./src:/app
+      - ./data:/app/data
+      - ./routes.json:/app/routes.json

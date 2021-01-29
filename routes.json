@@ -1,0 +1,80 @@
+[
+  {
+    "endpoint": "/example",
+    "method": "GET",
+    "collections": [
+      {
+        "request": {
+          "type": null,
+          "access_token": null,
+          "body": null,
+          "params": null
+        },
+        "response": {
+          "status": 200,
+          "body": "example.json"
+        }
+      },
+      {
+        "request": {
+          "type": null,
+          "access_token": null,
+          "body": null,
+          "params": {
+            "success": "true"
+          }
+        },
+        "response": {
+          "status": 200,
+          "body": "example-with-query.json"
+        }
+      }
+    ]
+  },
+  {
+    "endpoint": "/post-example",
+    "method": "POST",
+    "collections": [
+      {
+        "request": {
+          "type": "json",
+          "access_token": "qwerty1234",
+          "body": {
+            "data": "hello world"
+          },
+          "params": null
+        },
+        "response": {
+          "status": 200,
+          "body": "example-post-success.json"
+        }
+      },
+      {
+        "request": {
+          "type": "json",
+          "access_token": null,
+          "body": {
+            "data": "hello world"
+          },
+          "params": null
+        },
+        "response": {
+          "status": 401,
+          "body": "example-post-invalid-token.json"
+        }
+      },
+      {
+        "request": {
+          "type": "json",
+          "access_token": "qwerty1234",
+          "body": null,
+          "params": null
+        },
+        "response": {
+          "status": 400,
+          "body": "example-post-invalid-request.json"
+        }
+      }
+    ]
+  }
+]
